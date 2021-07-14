@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
 
@@ -14,7 +15,11 @@ class DetailsScreen extends StatelessWidget {
           _CustomAppBar(),
           SliverList(
             delegate: SliverChildListDelegate([
-              _PosterAndTitle()
+              _PosterAndTitle(),
+              _Overview(),
+              _Overview(),
+              _Overview(),
+              CastingCards()
             ]),
           )
         ],
@@ -38,6 +43,7 @@ class _CustomAppBar extends StatelessWidget {
         title: Container(
           width: double.infinity,
           alignment: Alignment.bottomCenter,
+          padding: EdgeInsets.only(bottom: 10),
           color: Colors.black12,
           child: Text('movie.title', style: TextStyle(fontSize: 16)),
         ),
@@ -81,12 +87,27 @@ class _PosterAndTitle extends StatelessWidget {
                 children: [
                   Icon(Icons.star_outline, size: 15, color: Colors.grey),
                   SizedBox(width: 5),
-                  Text('movie.voteAverage', style: textTheme.caption,)
+                  Text('movie.voteAverage', style: textTheme.caption)
                 ],
               )     
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class _Overview extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      child: Text(
+        'ascasdfsdgsdsdfsdksdfsdfshd sdfas asdfasdf asdasasa asdffasasfd asdasfasf asdf asfasfafsfasd asd asfafasdfasd fasdfasdfa afas fasf asdfasf adga sdfasdg adg asdfasdf asdfasdgsdgds sfghrtutgh df gbsdhsdfghsd kasgda asdfjkdf sdfhifvujr cuysdgsdfgv sdjhsdf sddasdf',
+        textAlign: TextAlign.justify,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
     );
   }
